@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.scrolling-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto; /* Allow container to expand vertically */
+  z-index: -1;
+  display: flex;
+  flex-direction: column; /* Stack rows vertically */
+}
+
+.row {
+  display: flex;
+  width: 200%; /* Each row is 200% of the viewport width */
+  height: 12.5vh; /* Adjust based on how many rows you want */
+}
+
+.row img {
+  width: 10%; /* Adjust based on your SVG size and how many you want in a row */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.scroll-right {
+  animation: scrollRight 10s linear infinite;
+}
+
+.scroll-left {
+  animation: scrollLeft 10s linear infinite;
+}
+</style>
+</head>
+<body>
+  <div class="scrolling-background">
+
+    <div class="row scroll-right">
+      <img src="Background.svg" alt="Scrolling Background 1">
+      <img src="Background.svg" alt="Scrolling Background 2">
+      <img src="Background.svg" alt="Scrolling Background 1">
+      <img src="Background.svg" alt="Scrolling Background 2">
+      <img src="Background.svg" alt="Scrolling Background 1">
+      <img src="Background.svg" alt="Scrolling Background 2">
+      <img src="Background.svg" alt="Scrolling Background 1">
+      <img src="Background.svg" alt="Scrolling Background 2">
+      <img src="Background.svg" alt="Scrolling Background 1">
+      <img src="Background.svg" alt="Scrolling Background 2">
+    </div>
+
+
+    <div class="row scroll-left">
+      <img src="Background.svg" alt="Scrolling Background 3">
+      <img src="Background.svg" alt="Scrolling Background 4">
+      <img src="Background.svg" alt="Scrolling Background 3">
+      <img src="Background.svg" alt="Scrolling Background 4">
+      <img src="Background.svg" alt="Scrolling Background 3">
+      <img src="Background.svg" alt="Scrolling Background 4">
+      <img src="Background.svg" alt="Scrolling Background 3">
+      <img src="Background.svg" alt="Scrolling Background 4">
+      <img src="Background.svg" alt="Scrolling Background 3">
+      <img src="Background.svg" alt="Scrolling Background 4">
+      <img src="Background.svg" alt="Scrolling Background 3">
+      <img src="Background.svg" alt="Scrolling Background 4">
+    </div>
+    
+
+    <div class="row scroll-right">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+    </div>
+
+    <div class="row scroll-left">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+    </div>
+    <div class="row scroll-right">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+    </div>
+    <div class="row scroll-left">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+    </div>
+    <div class="row scroll-right">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+      <img src="Background.svg" alt="Scrolling Background 5">
+      <img src="Background.svg" alt="Scrolling Background 6">
+    </div>
+    <div class="row scroll-left">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+      <img src="Background.svg" alt="Scrolling Background 7">
+      <img src="Background.svg" alt="Scrolling Background 8">
+    </div>
+
+  </div>
+
+<div class="w3-content w3-section" style="max-width:500px; position: relative; z-index: 1; overflow: hidden;">
+    <img class="mySlides w3-animate-top" src="img_rr_03.jpg" style="width:100%">
+    <img class="mySlides w3-animate-bottom" src="download.jpeg" style="width:100%; height: auto;">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2500);    
+}
+</script>
+
+</body>
+</html>
