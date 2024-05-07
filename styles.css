@@ -157,8 +157,8 @@ a {
 
 .links-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
-    gap: 10px; /* Space between columns */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     max-width: 960px;
     margin: 0 auto;
 }
@@ -179,15 +179,15 @@ a {
     background-color: #2980b9;
 }
 .gradient-link {
-    background-image: linear-gradient(90deg, #000000, #ffffff); /* Gradient from black to white */
-    background-clip: text;
-    -webkit-background-clip: text;
+    background-image: linear-gradient(90deg, #000000, #ffffff);
     color: transparent;
     text-decoration: none;
     font-weight: bold;
-    transition: background-position 0.5s ease; /* Transition for the gradient movement */
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background-position 0.5s ease;
 }
 
 .gradient-link:hover {
-    background-position: 100%; /* Move the gradient to the end on hover */
+    background-position: 100%;
 }
