@@ -21,7 +21,14 @@ h1 {
     color: #2c3e50;
     margin-bottom: 20px;
 }
-
+#buttons {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; /* Control the total width to align buttons */
+    max-width: 960px; /* Adjust to your preferred max-width to fit 4 buttons */
+}
 a {
     margin-bottom: 20px;
     display: flex;
@@ -31,7 +38,7 @@ a {
     max-width: 960px; /* Adjust to your preferred max-width to fit 4 buttons */
 }
 
-.a, a { /* Apply styles to both .button class and button elements */
+.button, button { /* Apply styles to both .button class and button elements */
     background-color: #3498db;
     color: #ffffff;
     border: none;
@@ -48,10 +55,9 @@ a {
     display: inline-block; /* Allow width and padding to affect <a> tags */
 }
 
-.a:hover, a:hover {
+.button:hover, button:hover {
     background-color: #2980b9;
 }
-
 #gallery {
     display: flex;
     flex-wrap: wrap;
