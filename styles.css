@@ -190,12 +190,15 @@ a {
     font-weight: bold;
     background-clip: padding-box; /* Apply gradient to the padding area */
     -webkit-background-clip: padding-box; /* For Safari */
-    border: 10px solid transparent; /* Initially transparent border */
-    transition: border-color 0.5s ease; /* Transition for border color */
+    border: 2px solid transparent; /* Initially transparent border */
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Transition for border color and transform */
     padding: 10px 20px;
     border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
 }
 
 .gradient-link:hover {
-    border-color: #000000; /* Change border color on hover */
+    border-color: #ffffff; /* Change border color on hover */
+    transform: scale(1.05); /* Add a slight scale effect on hover for a cool look */
 }
+
