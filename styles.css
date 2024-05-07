@@ -190,7 +190,7 @@ a {
     font-weight: bold;
     background-clip: padding-box; /* Apply gradient to the padding area */
     -webkit-background-clip: padding-box; /* For Safari */
-    border: 2px solid transparent; /* Initially transparent border */
+    border: 10px solid transparent; /* Initially transparent border */
     transition: border-color 0.5s ease; /* Transition for border color */
     padding: 10px 20px;
     border-radius: 5px;
