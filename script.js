@@ -1,62 +1,67 @@
 window.onload = function() {
-    const categories = {
-        'Body Temple': ["INTP", "ENTJ", "ISFP", "ESFJ"],
-        'Mind Temple': ["ISTP", "ESTJ", "INFP", "ENFJ"],
-        'Soul Temple': ["ISTJ", "ESTP", "INFJ", "ENFP"],
-        'Heart Temple': ["ENTP", "INTJ", "ESFP", "ISFJ"],
-        'Crusaders': ["ENTP", "INTP", "ESFJ", "ISFJ"],
-        'Wayfarers': ["ENTJ", "INTJ", "ESFP", "ISFP"],
-        'Templars': ["ESTP", "INFJ", "ENFJ", "ISTP"],
-        'Philosophers': ["ESTJ", "INFP", "ENFP", "ISTJ"]
-    };
+    const types = document.body.getAttribute('data-types').split(','); // Get types from HTML data attribute, split by comma
+    types.forEach(type => {
+        const typeTrimmed = type.trim();
+        const folderPath = `Types/${typeTrimmed}/`;
+        const galleryId = `gallery-${typeTrimmed}`;
+        const gallery = document.getElementById(galleryId);
 
-    const personalityTypes = [
-        "INTJ", "INTP", "ENTJ", "ENTP",
-        "INFJ", "INFP", "ENFJ", "ENFP",
-        "ISTJ", "ISFJ", "ESTJ", "ESFJ",
-        "ISTP", "ISFP", "ESTP", "ESFP"
-    ];
+        function loadImagesForType(type) {
+            fetch(`${folderPath}${type}.txt`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch names: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    const names = text.split('\n');
+                    displayImagesAndNames(names, folderPath, type);
+                })
+                .catch(error => {
+                    console.error(error);
+                    displayImagesAndNames([], folderPath, type);
+                });
+        }
 
-    const gallery = document.getElementById('gallery');
+        function displayImagesAndNames(names, folderPath, type) {
+            gallery.innerHTML = ''; // Clear previous images
+            let imagesLoaded = 0;
+            const totalImages = names.length;
 
-    // Function to load images for a type
-    function loadImagesForType(type) {
-        const folderPath = `Types/${type}/`;
-        fetch(`${folderPath}${type}.txt`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch names: ${response.statusText}`);
-                }
-                return response.text();
-            })
-            .then(text => {
-                const names = text.split('\n');
-                displayImagesAndNames(names, folderPath); // Pass names and folder path
-            })
-            .catch(error => {
-                console.error(error);
-                displayImagesAndNames([], folderPath); // Pass empty names and folder path
-            });
-    }
+            for (let j = 1; j <= totalImages; j++) {
+                const imgContainer = document.createElement('div');
+                imgContainer.classList.add('img-container');
 
-    // Function to display images for names in a folder
-    function displayImagesAndNames(names, folderPath) {
-        names.forEach(name => {
-            const img = new Image();
-            img.src = `${folderPath}${name}.jpg`;
-            gallery.appendChild(img);
-        });
-    }
+                const img = new Image();
+                img.src = `${folderPath}${j}.jpg`;
+                img.alt = `Image ${j} of type ${type}`;
 
-    // Handle tab switching logic
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const tabName = this.dataset.tab;
-            gallery.innerHTML = ''; // Clear the gallery
-            categories[tabName].forEach(type => {
-                loadImagesForType(type); // Load images for each type in the selected category
-            });
-        });
+                const nameLabel = document.createElement('div');
+                nameLabel.textContent = names[j - 1] || 'Name unavailable';
+
+                img.onload = function() {
+                    imagesLoaded++;
+                    img.style.opacity = '1';
+                    if (imagesLoaded === totalImages) {
+                        gallery.style.opacity = '1';
+                    }
+                };
+
+                img.onerror = function() {
+                    imgContainer.style.display = 'none';
+                    imagesLoaded++;
+                    if (imagesLoaded === totalImages) {
+                        gallery.style.opacity = '1';
+                    }
+                };
+
+                imgContainer.appendChild(img);
+                imgContainer.appendChild(nameLabel);
+                gallery.appendChild(imgContainer);
+            }
+        }
+
+        loadImagesForType(typeTrimmed);
     });
 };
