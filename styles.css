@@ -185,14 +185,17 @@ a {
 
 .gradient-link {
     background-image: linear-gradient(90deg, #000000, #ffffff);
-    color: transparent;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    background-clip: text;
-    -webkit-background-clip: text;
-    transition: background-position 0.5s ease;
+    background-clip: padding-box; /* Apply gradient to the padding area */
+    -webkit-background-clip: padding-box; /* For Safari */
+    border: 2px solid transparent; /* Initially transparent border */
+    transition: border-color 0.5s ease; /* Transition for border color */
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .gradient-link:hover {
-    background-position: 100%;
+    border-color: #ffffff; /* Change border color on hover */
 }
