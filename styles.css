@@ -21,6 +21,7 @@ h1 {
     color: #2c3e50;
     margin-bottom: 20px;
 }
+
 #buttons {
     margin-bottom: 20px;
     display: flex;
@@ -29,6 +30,7 @@ h1 {
     width: 100%; /* Control the total width to align buttons */
     max-width: 960px; /* Adjust to your preferred max-width to fit 4 buttons */
 }
+
 a {
     margin-bottom: 20px;
     display: flex;
@@ -58,6 +60,7 @@ a {
 .button:hover, button:hover {
     background-color: #2980b9;
 }
+
 #gallery {
     display: flex;
     flex-wrap: wrap;
@@ -111,6 +114,7 @@ a {
         height: 150px;
     }
 }
+
 .img-container {
     display: flex;
     flex-direction: column;
@@ -178,6 +182,7 @@ a {
 .links-container a:hover {
     background-color: #2980b9;
 }
+
 .gradient-link {
     background-image: linear-gradient(90deg, #000000, #ffffff);
     color: transparent;
