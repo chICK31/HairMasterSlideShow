@@ -17,33 +17,9 @@ window.onload = function() {
         "ISTP", "ISFP", "ESTP", "ESFP"
     ];
 
-    const buttonsContainer = document.getElementById('buttons');
     const gallery = document.getElementById('gallery');
 
-    // Create category buttons
-    Object.keys(categories).forEach(category => {
-        const button = document.createElement('button');
-        button.textContent = category;
-        button.onclick = function() {
-            gallery.innerHTML = ''; // Clear the gallery
-            categories[category].forEach(type => {
-                loadImagesForType(type); // Load images for each type
-            });
-        };
-        buttonsContainer.appendChild(button);
-    });
-
-    // Create individual type buttons
-    personalityTypes.forEach(type => {
-        const button = document.createElement('button');
-        button.textContent = type;
-        button.onclick = function() {
-            gallery.innerHTML = ''; // Clear the gallery first for transition
-            loadImagesForType(type); // Load images for the selected type
-        };
-        buttonsContainer.appendChild(button);
-    });
-
+    // Function to load images for a type
     function loadImagesForType(type) {
         const folderPath = `Types/${type}/`;
         fetch(`${folderPath}${type}.txt`)
@@ -63,6 +39,7 @@ window.onload = function() {
             });
     }
 
+    // Function to display images for names in a folder
     function displayImagesAndNames(names, folderPath) {
         names.forEach(name => {
             const img = new Image();
@@ -70,4 +47,16 @@ window.onload = function() {
             gallery.appendChild(img);
         });
     }
+
+    // Handle tab switching logic
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const tabName = this.dataset.tab;
+            gallery.innerHTML = ''; // Clear the gallery
+            categories[tabName].forEach(type => {
+                loadImagesForType(type); // Load images for each type in the selected category
+            });
+        });
+    });
 };
